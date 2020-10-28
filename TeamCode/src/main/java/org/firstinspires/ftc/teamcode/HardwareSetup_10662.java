@@ -31,6 +31,8 @@ public class HardwareSetup_10662 {
     //motors
     public DcMotor motorLeft = null;
     public DcMotor motorRight = null;
+    public DcMotor spinThing = null;
+
     //public DcMotor motorArm = null;
 
     //servos
@@ -71,6 +73,7 @@ public class HardwareSetup_10662 {
         // Define Motors to match Robot Configuration File
         motorLeft = hwMap.dcMotor.get("motorL");
         motorRight = hwMap.dcMotor.get("motorR");
+        spinThing = hwMap.dcMotor.get("spinThing");
         //motorArm = hwMap.dcMotor.get("motorArm");
 
         // Set the drive motor directions:
@@ -81,6 +84,7 @@ public class HardwareSetup_10662 {
         //Keep the motors from moving during initialize.
         motorLeft.setPower(MOTOR_STOP);
         motorRight.setPower(MOTOR_STOP);
+        spinThing.setPower(MOTOR_STOP);
         //motorArm.setPower(MOTOR_STOP);
 
         // Set motors to run USING or WITHOUT encoders
@@ -88,6 +92,7 @@ public class HardwareSetup_10662 {
         //motorArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        spinThing.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         /************************************************************
          * SERVO SECTION

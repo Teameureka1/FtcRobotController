@@ -52,7 +52,7 @@ import org.firstinspires.ftc.teamcode.ExampleCode.TestBotHardwareSetup;
 
 
 @TeleOp(name="TeleOp_10662", group="Examples")  // @Autonomous(...) is the other common choice
-@Disabled
+//@Disabled
 public class TeleOp_10662 extends LinearOpMode {
     private ElapsedTime runtime = new ElapsedTime();
 
@@ -80,14 +80,14 @@ public class TeleOp_10662 extends LinearOpMode {
             robot.motorLeft.setPower(gamepad1.left_stick_y);
             robot.motorRight.setPower(gamepad1.right_stick_y);
 
-            // Arm Control - Uses dual buttons to control motor direction
+            // Spinning Thing - Uses dual buttons to control motor direction
             if(gamepad1.right_bumper)
             {
-                //robot.motorArm.setPower(-gamepad1.right_trigger); // if both Bumper + Trigger, then negative power, runs arm down
+                robot.spinThing.setPower(-gamepad1.right_trigger); // if both Bumper + Trigger, then negative power, runs arm down
             }
             else
             {
-                //robot.motorArm.setPower(gamepad1.right_trigger);  // else trigger positive value, runs arm up
+                robot.spinThing.setPower(gamepad1.right_trigger);  // else trigger positive value, runs arm up
             }
 
             //servo commands
