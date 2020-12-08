@@ -81,23 +81,35 @@ public class TeleOp_10662 extends LinearOpMode {
             robot.motorRight.setPower(gamepad1.right_stick_y);
 
             // Spinning Thing - Uses dual buttons to control motor direction
-            if(gamepad1.right_bumper)
+            if(gamepad2.right_bumper)
             {
-                robot.spinThing.setPower(-gamepad1.right_trigger); // if both Bumper + Trigger, then negative power, runs arm down
+                robot.sucker.setPower(-gamepad2.right_trigger); // if both Bumper + Trigger, then negative power, runs arm down
             }
             else
             {
-                robot.spinThing.setPower(gamepad1.right_trigger);  // else trigger positive value, runs arm up
+                robot.sucker.setPower(gamepad2.right_trigger);  // else trigger positive value, runs arm up
+            }
+
+            if(gamepad2.left_bumper)
+            {
+                robot.CCWMotor.setPower(1.00);
+            }
+
+            if(gamepad2.left_bumper)
+            {
+                robot.CWMotor.setPower(-1.00);
             }
 
             //servo commands
-            if(gamepad1.a) //button 'a' will open
+          /*  if(gamepad1.a) //button 'a' will open
             {
+
                 //robot.servoHandR.setPosition(robot.OPEN);
                 //robot.servoHandL.setPosition(robot.OPEN);
             }
             else if (gamepad1.b) //button 'b' will close
             {
+
                 //robot.servoHandR.setPosition(robot.CLOSED);
                 //robot.servoHandL.setPosition(robot.CLOSED);
             }
@@ -114,7 +126,7 @@ public class TeleOp_10662 extends LinearOpMode {
             else
             {
                 //robot.crServo.setPosition(robot.STOP);
-            }
+            } */
 
 
             idle(); // Always call idle() at the bottom of your while(opModeIsActive()) loop

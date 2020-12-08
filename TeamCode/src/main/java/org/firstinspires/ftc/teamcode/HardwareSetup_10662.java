@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -31,7 +32,10 @@ public class HardwareSetup_10662 {
     //motors
     public DcMotor motorLeft = null;
     public DcMotor motorRight = null;
-    public DcMotor spinThing = null;
+    public DcMotor sucker = null;
+    public DcMotor CWMotor = null;
+    public DcMotor CCWMotor = null;
+    public DcMotor Conveyor = null;
 
     //public DcMotor motorArm = null;
 
@@ -73,18 +77,28 @@ public class HardwareSetup_10662 {
         // Define Motors to match Robot Configuration File
         motorLeft = hwMap.dcMotor.get("motorL");
         motorRight = hwMap.dcMotor.get("motorR");
-        spinThing = hwMap.dcMotor.get("spinThing");
+        sucker = hwMap.dcMotor.get("sucker");
+        CCWMotor = hwMap.dcMotor.get("CCWMotor");
+        CWMotor = hwMap.dcMotor.get("CWMotor");
+        Conveyor = hwMap.dcMotor.get("Conveyor");
+
+
         //motorArm = hwMap.dcMotor.get("motorArm");
 
         // Set the drive motor directions:
         motorLeft.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
         motorRight.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
+        CWMotor.setDirection(DcMotor.Direction.FORWARD);
+        CCWMotor.setDirection(DcMotor.Direction.REVERSE);
         //motorArm.setDirection(DcMotor.Direction.FORWARD); // Can change based on motor configuration
 
         //Keep the motors from moving during initialize.
         motorLeft.setPower(MOTOR_STOP);
         motorRight.setPower(MOTOR_STOP);
-        spinThing.setPower(MOTOR_STOP);
+        sucker.setPower(MOTOR_STOP);
+        CCWMotor.setPower(MOTOR_STOP);
+        CWMotor.setPower(MOTOR_STOP);
+        Conveyor.setPower(MOTOR_STOP);
         //motorArm.setPower(MOTOR_STOP);
 
         // Set motors to run USING or WITHOUT encoders
@@ -92,7 +106,10 @@ public class HardwareSetup_10662 {
         //motorArm.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         motorLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        spinThing.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        sucker.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        CCWMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        CWMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        Conveyor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         /************************************************************
          * SERVO SECTION
