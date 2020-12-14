@@ -70,7 +70,6 @@ public class TeleOp_10662 extends LinearOpMode {
         /************************
          * TeleOp Code Below://
          *************************/
-
         while (opModeIsActive()) {  // run until the end of the match (driver presses STOP)
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.update();
@@ -83,21 +82,19 @@ public class TeleOp_10662 extends LinearOpMode {
             // Spinning Thing - Uses dual buttons to control motor direction
             if(gamepad2.right_bumper)
             {
-                robot.sucker.setPower(-gamepad2.right_trigger); // if both Bumper + Trigger, then negative power, runs arm down
+                robot.sucker.setPower(-gamepad2.left_trigger); // if both Bumper + Trigger, then negative power, runs arm down
             }
             else
             {
-                robot.sucker.setPower(gamepad2.right_trigger);  // else trigger positive value, runs arm up
+                robot.sucker.setPower(gamepad2.left_trigger);  // else trigger positive value, runs arm up
             }
 
-            if(gamepad2.left_bumper)
-            {
-                robot.CCWMotor.setPower(1.00);
-            }
+            robot.CCWMotor.setPower(gamepad2.right_trigger / 2);
+            robot.CWMotor.setPower(gamepad2.right_trigger / 2);
 
-            if(gamepad2.left_bumper)
+            if(gamepad2.a)
             {
-                robot.CWMotor.setPower(-1.00);
+                robot.Conveyor.setPower(-5.00);
             }
 
             //servo commands
