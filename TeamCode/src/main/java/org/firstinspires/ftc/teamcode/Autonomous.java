@@ -15,7 +15,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
-@com.qualcomm.robotcore.eventloop.opmode.Autonomous(name="Example AutoByTime", group="Examples")  // @TeleOp(...) is the other common choice
+@com.qualcomm.robotcore.eventloop.opmode.Autonomous(name="Autonomous", group="Examples")  // @TeleOp(...) is the other common choice
 //@Disabled
 public class Autonomous extends LinearOpMode {
 
@@ -49,7 +49,7 @@ public class Autonomous extends LinearOpMode {
         /************************
          * Autonomous Code Below://
          *************************/
-        DriveForwardTime(DRIVE_POWER, 4000);
+        DriveForwardTime(DRIVE_POWER, 1000);
         StopDrivingTime(2000);
 
         DriveForwardTime(-DRIVE_POWER, 500);
