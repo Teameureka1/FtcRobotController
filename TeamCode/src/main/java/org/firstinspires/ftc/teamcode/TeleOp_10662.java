@@ -76,8 +76,8 @@ public class TeleOp_10662 extends LinearOpMode {
 
             // tank drive set to gamepad1 joysticks
             //(note: The joystick goes negative when pushed forwards)
-            robot.motorLeft.setPower(gamepad1.left_stick_y);
-            robot.motorRight.setPower(gamepad1.right_stick_y);
+            robot.motorLeft.setPower(-gamepad1.left_stick_y);
+            robot.motorRight.setPower(-gamepad1.right_stick_y);
 
             // Spinning Thing - Uses dual buttons to control motor direction
             if(gamepad2.right_bumper)
@@ -95,6 +95,11 @@ public class TeleOp_10662 extends LinearOpMode {
             if(gamepad2.a)
             {
                 robot.Conveyor.setPower(-5.00);
+            }
+
+            if(gamepad2.x)
+            {
+                robot.Conveyor.setPower(0.00);
             }
 
             //servo commands
