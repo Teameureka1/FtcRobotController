@@ -7,17 +7,14 @@
  * Don't forget to comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 package org.firstinspires.ftc.teamcode;
-
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
-@com.qualcomm.robotcore.eventloop.opmode.Autonomous(name="Autonomous", group="Examples")  // @TeleOp(...) is the other common choice
+@Autonomous(name="Auto Drive To Line", group="Competition")
 //@Disabled
-public class Autonomous extends LinearOpMode {
+public class Bot10662Autonomous extends LinearOpMode {
 
     /* Declare OpMode members. */
     private ElapsedTime runtime = new ElapsedTime();
@@ -39,9 +36,8 @@ public class Autonomous extends LinearOpMode {
          * to 'get' must correspond to the names assigned during the robot configuration
          * step (using the FTC Robot Controller app on the phone).
          */
-        robot.init(hardwareMap);                //Initialize hardware from the MyBotHardware Setup
+        robot.init(hardwareMap); //Initialize hardware from the MyBotHardware Setup
 
-        
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
         runtime.reset();
@@ -55,10 +51,7 @@ public class Autonomous extends LinearOpMode {
         DriveForwardTime(-DRIVE_POWER, 500);
         StopDrivingTime(2000);
 
-
         StopDriving();
-
-       
 
     }//runOpMode
 
