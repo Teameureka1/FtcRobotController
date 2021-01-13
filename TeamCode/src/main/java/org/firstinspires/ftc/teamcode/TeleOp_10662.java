@@ -51,7 +51,7 @@ import org.firstinspires.ftc.teamcode.ExampleCode.TestBotHardwareSetup;
  */
 
 
-@TeleOp(name="TeleOp_10662", group="Competition")  // @Autonomous(...) is the other common choice
+@TeleOp(name="TeleOp_10662", group="Examples")  // @Autonomous(...) is the other common choice
 //@Disabled
 public class TeleOp_10662 extends LinearOpMode {
     private ElapsedTime runtime = new ElapsedTime();
@@ -87,11 +87,6 @@ public class TeleOp_10662 extends LinearOpMode {
             else
             {
                 robot.sucker.setPower(gamepad2.left_trigger);  // else trigger positive value, runs arm up
-            }
-
-            if(gamepad2.left_bumper)
-            {
-                robot.sucker.setPower(-1.00);
             }
 
             robot.CCWMotor.setPower(gamepad2.right_trigger / 2);
